@@ -100,6 +100,22 @@ class Bicicleta implements ImpactoEcologico {
 public class CalcularImpactoAmbiental {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        // Crear objetos de cada clase con entrada de usuario
+        Edificio edificio = Edificio.crearEdificioDesdeConsola();
+        Auto auto = Auto.crearAutoDesdeConsola();
+        Bicicleta bicicleta = Bicicleta.crearBicicletaDesdeConsola();
+
+        // Crear ArrayList de objetos que implementan ImpactoEcologico
+        ArrayList<ImpactoEcologico> listaImpactoEcologico = new ArrayList<>();
+        listaImpactoEcologico.add(edificio);
+        listaImpactoEcologico.add(auto);
+        listaImpactoEcologico.add(bicicleta);
+
+        // Iterar a través de la lista e imprimir información
+        for (ImpactoEcologico objeto : listaImpactoEcologico) {
+            System.out.println("Tipo: " + objeto.getClass().getSimpleName());
+            System.out.println("Impacto ecológico del carbono (kgCO2​): " + objeto.obtenerImpactoEcologico());
+            System.out.println("------------------------");
+        }
     }
 }
