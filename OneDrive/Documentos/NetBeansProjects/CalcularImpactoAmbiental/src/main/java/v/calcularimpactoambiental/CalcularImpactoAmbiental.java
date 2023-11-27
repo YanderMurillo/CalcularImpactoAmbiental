@@ -7,6 +7,9 @@ import java.util.Scanner;
  *
  * @author muril
  */
+interface ImpactoEcologico {
+    double obtenerImpactoEcologico();
+}
 // Clase Edificio
 class Edificio  {
     private int consumoAnual;
